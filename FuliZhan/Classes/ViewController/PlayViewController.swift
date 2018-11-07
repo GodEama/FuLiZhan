@@ -9,15 +9,38 @@
 import UIKit
 import IJKMediaFramework
 import SVProgressHUD
+import Kingfisher
 
 class PlayViewController: UIViewController{
     
     var playUrl : String  = ""
+    var video : Video = Video()
     var isHidden : Bool = true
     
     lazy var player: IJKFFMoviePlayerController = IJKFFMoviePlayerController(contentURLString: playUrl, with: IJKFFOptions.byDefault())
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageView = UIImageView(frame: self.view.bounds)
+//        imageView.contentMode = .scaleAspectFit
+        imageView.center = self.view.center;
+        imageView.kf.setImage(with: URL(string: (video.img)))
+        self.view.addSubview(imageView)
+        /**
+         UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+         UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+         effectView.frame = CGRectMake(0, 0, bgImgView.frame.size.width*0.5, bgImgView.frame.size.height);
+         [bgImgView addSubview:effectView];
+         
+        
+         */
+        
+        let effect = UIBlurEffect(style: .dark)
+        let effectView = UIVisualEffectView(effect: effect)
+        effectView.frame = imageView.bounds;
+        imageView.addSubview(effectView)
+        
+        
+        
         self.view.backgroundColor = .white
         player.scalingMode = .aspectFit
         player.setPauseInBackground(true)

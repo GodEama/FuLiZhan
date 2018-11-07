@@ -69,6 +69,7 @@ class AnchorViewController: UITableViewController {
         let video = self.myAnchors[indexPath.row]
         playerVC.playUrl = video.address
         playerVC.title = video.title
+        playerVC.video = video
         self.navigationController?.pushViewController(playerVC, animated: true)
         
     }
