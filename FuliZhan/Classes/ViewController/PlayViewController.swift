@@ -8,6 +8,7 @@
 
 import UIKit
 import IJKMediaFramework
+import SVProgressHUD
 
 class PlayViewController: UIViewController{
     
@@ -26,6 +27,9 @@ class PlayViewController: UIViewController{
         view1.frame = self.view.bounds
         self.view.addSubview(view1)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(showNav))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadStateDidChange), name: NSNotification.Name.IJKMPMoviePlayerLoadStateDidChange, object: player)
+        NotificationCenter.default.addObserver(self, selector: #selector(moviePlayBackDidFinish), name: NSNotification.Name.IJKMPMoviePlayerPlaybackDidFinish, object: player)
         
         view1.addGestureRecognizer(gesture)
     }
@@ -61,7 +65,33 @@ class PlayViewController: UIViewController{
         })
     }
     
-
+    @objc func loadStateDidChange(_ notification : NSNotification){
+        switch player.loadState {
+        case .stalled:
+            SVProgressHUD.showInfo(withStatus: "loading……")
+            break
+        case .playthroughOK:
+            SVProgressHUD.dismiss()
+            break
+        case .playable:
+            SVProgressHUD.dismiss()
+            break
+        default:
+            SVProgressHUD.dismiss()
+        }
+    }
+    
+    @objc func moviePlayBackDidFinish(_ notification : NSNotification){
+        self.navigationController?.popViewController(animated: true)
+      
+    }
+    
+    
+    deinit {
+        player.shutdown()
+        NotificationCenter.default.removeObserver(self)
+    }
+ 
     /*
     // MARK: - Navigation
 

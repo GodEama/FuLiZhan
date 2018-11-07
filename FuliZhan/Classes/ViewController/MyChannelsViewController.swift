@@ -65,7 +65,7 @@ extension MyChannelsViewController:UICollectionViewDelegate,UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = AnchorViewController()
         let video = myChannels[indexPath.row]
-        
+        vc.title = video.title;
         vc.address = video.address
         self.navigationController?.pushViewController(vc, animated: true)
         

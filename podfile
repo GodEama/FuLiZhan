@@ -7,4 +7,5 @@ target 'FuliZhan' do
   pod 'Kingfisher'
   pod 'SwiftyJSON'
   pod 'Player'
+  pod 'SVProgressHUD'
 end

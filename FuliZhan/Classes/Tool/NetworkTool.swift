@@ -10,6 +10,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import CoreFoundation
 protocol NetworkToolProtocol {
 
     //平台数据
@@ -102,27 +103,27 @@ extension NetworkToolProtocol{
                 let path:String = NSHomeDirectory() + "/Documents/textCache.txt"
                 if FileManager.default.fileExists(atPath: path){
                     
-                    
                     do{
-                        
-                        let str = try NSString(contentsOfFile: path,encoding: String.Encoding.windowsCP1251.rawValue)
+                        let enc = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
+                        let str = try NSString(contentsOfFile: path,encoding: enc)
                         if(str != nil){
                             print(str)
-                            
                             
                             let string  = str.components(separatedBy: "{").last
                             let string1 = string!.components(separatedBy: "}").first
                             var channels = [Video]()
                             
-                            let json = string1!.components(separatedBy: "|@groupId|@appId")
+                            let json = string1!.components(separatedBy: "|@groupId|@appId|@addname（1:1真金棋牌，点击下载送现金）|@addurlhttps://mob1.lklwfs.com/5GTqUXB80B7QJnP/|\r\n")
                             for i in json{
                                 var video = Video.init()
                                 let data1 = i
-                                let title = data1.components(separatedBy: "|").first!.components(separatedBy: "@tp").last
+                                let title = data1.components(separatedBy: "@mc").last!.components(separatedBy: "|@tp").first
                                 let image = data1.components(separatedBy: "|@dz").first!.components(separatedBy: "@tp").last
                                 let address = data1.components(separatedBy: "|@dz").last
                                 video.img = image!
                                 video.address = address!
+                                
+                                
                                 video.title = title!
                                 channels.append(video)
                             }

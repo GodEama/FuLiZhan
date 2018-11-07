@@ -18,11 +18,11 @@ class AnchorViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "主播列表"
+        
         tableView.gxj_registerCell(cell: AnchorTableViewCell.self)
         tableView.tableFooterView = UIView()
         refreshControl = UIRefreshControl.init()
@@ -68,6 +68,7 @@ class AnchorViewController: UITableViewController {
         let playerVC = PlayViewController()
         let video = self.myAnchors[indexPath.row]
         playerVC.playUrl = video.address
+        playerVC.title = video.title
         self.navigationController?.pushViewController(playerVC, animated: true)
         
     }
