@@ -113,13 +113,13 @@ extension NetworkToolProtocol{
                             let string1 = string!.components(separatedBy: "}").first
                             var channels = [Video]()
                             
-                            let json = string1!.components(separatedBy: "|@groupId|@appId|@addname（1:1真金棋牌，点击下载送现金）|@addurlhttps://mob1.lklwfs.com/5GTqUXB80B7QJnP/|\r\n")
+                            let json = string1!.components(separatedBy: "@addurlhttp")
                             for i in json{
                                 var video = Video.init()
                                 let data1 = i
                                 let title = data1.components(separatedBy: "@mc").last!.components(separatedBy: "|@tp").first
                                 let image = data1.components(separatedBy: "|@dz").first!.components(separatedBy: "@tp").last
-                                let address = data1.components(separatedBy: "|@dz").last
+                                let address = data1.components(separatedBy: "|@dz").last!.components(separatedBy: "|@groupId").first
                                 video.img = image!
                                 video.address = address!
                                 
