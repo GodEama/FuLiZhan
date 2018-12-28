@@ -19,12 +19,13 @@ class MyChannelsViewController: UIViewController {
         collectionView.gxj_registerCell(cell: channelCell.self)
         return collectionView
     }()
-    var myChannels = [Video]() {
+    var myChannels = [MyChannel]() {
         didSet {
-            let mainQueue = DispatchQueue.main
-            mainQueue.sync {
-                collectionView.reloadData()
-            }
+            collectionView.reloadData()
+//            let mainQueue = DispatchQueue.main
+//            mainQueue.sync {
+//                collectionView.reloadData()
+//            }
             
         }
     }
@@ -34,9 +35,10 @@ class MyChannelsViewController: UIViewController {
         self.title = "平台"
         setupUI()
 
-        NetworkTool.loadMyChannels(url: BASE_URL + "/utf8yuncaidan.txt") { channels in
-             self.myChannels = channels
+        NetworkTool.loadMyChannels1_6 { channels in
+            self.myChannels = channels;
         }
+       
    
     }
     func setupUI() {
@@ -68,6 +70,7 @@ extension MyChannelsViewController:UICollectionViewDelegate,UICollectionViewData
         vc.title = video.title;
         vc.address = video.address
         self.navigationController?.pushViewController(vc, animated: true)
+
         
     }
     

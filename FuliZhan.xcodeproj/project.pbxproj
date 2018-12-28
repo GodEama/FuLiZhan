@@ -38,6 +38,7 @@
 		9D5567F1218AA134008CD7E4 /* AnchorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5567EF218AA134008CD7E4 /* AnchorTableViewCell.swift */; };
 		9D5567F2218AA134008CD7E4 /* AnchorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D5567F0218AA134008CD7E4 /* AnchorTableViewCell.xib */; };
 		9D5567F4218AB3CF008CD7E4 /* MyChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */; };
+		9D5E7B3721BA17F400BF2314 /* ImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E7B3621BA17F400BF2314 /* ImgVC.swift */; };
 		9DC2B7D7219119F9000EEFDF /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7D6219119F9000EEFDF /* libstdc++.6.0.9.tbd */; };
 		9DC2B7D921911A2C000EEFDF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7D821911A2C000EEFDF /* libc++.tbd */; };
 		9DC2B7DB21911ABB000EEFDF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7DA21911ABB000EEFDF /* libz.tbd */; };
@@ -102,6 +103,7 @@
 		9D5567EF218AA134008CD7E4 /* AnchorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorTableViewCell.swift; sourceTree = "<group>"; };
 		9D5567F0218AA134008CD7E4 /* AnchorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnchorTableViewCell.xib; sourceTree = "<group>"; };
 		9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelsViewController.swift; sourceTree = "<group>"; };
+		9D5E7B3621BA17F400BF2314 /* ImgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgVC.swift; sourceTree = "<group>"; };
 		9DC2B7D6219119F9000EEFDF /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9DC2B7D821911A2C000EEFDF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		9DC2B7DA21911ABB000EEFDF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -277,6 +279,7 @@
 				9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */,
 				9D5567ED218AA10D008CD7E4 /* AnchorViewController.swift */,
 				9D4504E1219036540014E859 /* PlayViewController.swift */,
+				9D5E7B3621BA17F400BF2314 /* ImgVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				9D5567CE218A8F8A008CD7E4 /* channelCell.swift in Sources */,
 				9D5567DF218A94B4008CD7E4 /* UIView+Extension.swift in Sources */,
 				9D5567E8218A985C008CD7E4 /* MyChannel.swift in Sources */,
+				9D5E7B3721BA17F400BF2314 /* ImgVC.swift in Sources */,
 				9D5567DE218A94B4008CD7E4 /* UIColor+Extension.swift in Sources */,
 				9D5567F1218AA134008CD7E4 /* AnchorTableViewCell.swift in Sources */,
 				9D5567E6218A94F0008CD7E4 /* Const.swift in Sources */,
@@ -673,12 +677,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N8F3R2GERZ;
+				DEVELOPMENT_TEAM = F2R5R8ACUZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FuliZhan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,12 +719,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N8F3R2GERZ;
+				DEVELOPMENT_TEAM = F2R5R8ACUZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FuliZhan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

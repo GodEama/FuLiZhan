@@ -14,10 +14,10 @@ class channelCell: UICollectionViewCell,RegisterCellFromNib {
     @IBOutlet weak var imgView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
-    var channel = Video(){
+    var channel = MyChannel(){
         didSet{
-            nameLabel.text = channel.title
-            imgView.kf.setImage(with: URL(string: (channel.img)))
+            nameLabel.text = channel.title + "(" + channel.Number + ")"
+            imgView.kf.setImage(with: URL(string: (channel.xinimg)))
         }
     }
     override func awakeFromNib() {

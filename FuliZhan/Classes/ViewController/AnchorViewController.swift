@@ -32,13 +32,11 @@ class AnchorViewController: UITableViewController {
     
     
     @objc func loadAnchors() {
-        let url = BASE_URL + "\(address)"
-        NetworkTool.loadMyAnchors(url: url) { anchors in
-            if(self.refreshControl!.isRefreshing){
-                self.refreshControl!.endRefreshing()
-            }
+        NetworkTool.loadMyAnchors(address: address) { anchors in
+            self.refreshControl!.endRefreshing()
             self.myAnchors = anchors
         }
+        
        
     }
     // MARK: - Table view data source
