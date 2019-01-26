@@ -22,10 +22,6 @@ class MyChannelsViewController: UIViewController {
     var myChannels = [MyChannel]() {
         didSet {
             collectionView.reloadData()
-//            let mainQueue = DispatchQueue.main
-//            mainQueue.sync {
-//                collectionView.reloadData()
-//            }
             
         }
     }
@@ -35,11 +31,15 @@ class MyChannelsViewController: UIViewController {
         self.title = "平台"
         setupUI()
 
+        loadDatas()
+        loadRefreshItem()
+       
+   
+    }
+    @objc func loadDatas() {
         NetworkTool.loadMyChannels1_6 { channels in
             self.myChannels = channels;
         }
-       
-   
     }
     func setupUI() {
         
@@ -51,6 +51,14 @@ class MyChannelsViewController: UIViewController {
     
     
 }
+extension MyChannelsViewController{
+    fileprivate func loadRefreshItem() {
+        let rightItem = UIBarButtonItem.init(title: "刷新", style: .plain, target: self, action: #selector(loadDatas))
+        self.navigationItem.rightBarButtonItem = rightItem
+    }
+
+}
+
 extension MyChannelsViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.myChannels.count
@@ -68,7 +76,7 @@ extension MyChannelsViewController:UICollectionViewDelegate,UICollectionViewData
         let vc = AnchorViewController()
         let video = myChannels[indexPath.row]
         vc.title = video.title;
-        vc.address = video.address
+        vc.address = video.name
         self.navigationController?.pushViewController(vc, animated: true)
 
         
@@ -80,7 +88,7 @@ extension MyChannelsViewController:UICollectionViewDelegate,UICollectionViewData
 class MyChannelFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         //每个cell大小
-        itemSize = CGSize(width: 100, height: 124)
+        itemSize = CGSize(width: 80, height: 90)
         minimumLineSpacing = 0
         minimumInteritemSpacing = 0
         sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

@@ -17,7 +17,7 @@ class AnchorTableViewCell: UITableViewCell,RegisterCellFromNib {
     var anchor = Video(){
         didSet{
             nameLabel.text = anchor.title
-            addressLabel.text = anchor.address
+//            addressLabel.text = anchor.address
             imgView.kf.setImage(with: URL(string: (anchor.img)))
         }
     }

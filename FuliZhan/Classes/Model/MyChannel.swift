@@ -16,15 +16,16 @@ struct Banner    : HandyJSON {
 }
 
 struct Video    : HandyJSON {
-    var address: String = ""
+    var play_url: String = ""
     var img: String = ""
     var title: String = ""
+    var flag: NSInteger = 0
 }
 
 struct MyChannel    : HandyJSON {
-    var address: String = ""
-    var xinimg: String = ""
-    var Number: String = ""
+    var name: String = ""
+    var img: String = ""
+    var number: String = ""
     var title: String = ""
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3FFF8521FC187700A9D600 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3FFF8421FC187700A9D600 /* libstdc++.6.0.9.tbd */; };
 		9D4504E2219036540014E859 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4504E1219036540014E859 /* PlayViewController.swift */; };
 		9D4504E7219042720014E859 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4504E6219042720014E859 /* MediaPlayer.framework */; };
 		9D4504E9219042880014E859 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4504E8219042880014E859 /* libbz2.tbd */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		083CB6B5D3B92846C52E77BC /* Pods_FuliZhan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FuliZhan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3FFF8421FC187700A9D600 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
 		9D4504E1219036540014E859 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		9D4504E6219042720014E859 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9D4504E8219042880014E859 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
@@ -133,6 +135,7 @@
 				9D4504EB219042C90014E859 /* AudioToolbox.framework in Frameworks */,
 				9D4504E9219042880014E859 /* libbz2.tbd in Frameworks */,
 				9D4504E7219042720014E859 /* MediaPlayer.framework in Frameworks */,
+				9D3FFF8521FC187700A9D600 /* libstdc++.6.0.9.tbd in Frameworks */,
 				FC0D0C26E5C939EC4ECE4ECA /* Pods_FuliZhan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				9DC2B7DE21915B06000EEFDF /* IJKMediaFramework.framework */,
+				9D3FFF8421FC187700A9D600 /* libstdc++.6.0.9.tbd */,
 				9D55679D218A8A74008CD7E4 /* FuliZhan */,
 				9D5567B2218A8A77008CD7E4 /* FuliZhanTests */,
 				9D5567BD218A8A77008CD7E4 /* FuliZhanUITests */,
@@ -706,7 +710,7 @@
 					"-framework",
 					"\"Player\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.FuliZhan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.fulizhan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -748,7 +752,7 @@
 					"-framework",
 					"\"Player\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.FuliZhan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.fulizhan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

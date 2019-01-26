@@ -16,7 +16,7 @@ protocol NetworkToolProtocol {
     //平台数据
     static func loadMyChannels1_6(completionHandler: @escaping (_ videos: [MyChannel]) -> ())
     //主播列表数据
-    static func loadMyAnchors(address:String,completionHandler:@escaping (_ videos:[Video]) -> ())
+    static func loadMyAnchors(param:Parameters,completionHandler:@escaping (_ videos:[Video]) -> ())
     
     
 }
@@ -25,29 +25,38 @@ extension NetworkToolProtocol{
 
     static func loadMyChannels1_6(completionHandler: @escaping (_ videos: [MyChannel]) -> ()) {
         
-        let url = "http://api.hclyz.cn:81/mf/json.txt"
+        let url = "http://www.kandx.vip/mobile/live/index"
 
-        
-        Alamofire.request(url).responseJSON { (response) in
+        let header =  [
+            "User-Agent":"okhttp/3.8.1",
+            "token": "e7cd5a4726e5748c3af4f66c2b06a245",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        Alamofire.request(url,method:.post, headers: header).responseJSON { (response) in
             // 网络错误的提示信息
             guard response.result.isSuccess else { return }
             if let value = response.result.value {
                 let json = JSON(value)
-                if let datas = json["pingtai"].arrayObject {
+                if let datas = json["data"]["lists"].arrayObject {
                     completionHandler(datas.compactMap({ MyChannel.deserialize(from: $0 as? Dictionary) }))
                 }
             }
         }
     }
     
-    static func loadMyAnchors(address:String,completionHandler:@escaping (_ videos:[Video]) -> ()){
-        let url = "http://api.hclyz.cn:81/mf/" + address
-        Alamofire.request(url).responseJSON { (response) in
+    static func loadMyAnchors(param:Parameters,completionHandler:@escaping (_ videos:[Video]) -> ()){
+        let url = "http://www.kandx.vip/mobile/live/anchors"
+        let header =  [
+            "User-Agent":"okhttp/3.8.1",
+            "token": "e7cd5a4726e5748c3af4f66c2b06a245",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             // 网络错误的提示信息
             guard response.result.isSuccess else { return }
             if let value = response.result.value {
                 let json = JSON(value)
-                if let datas = json["zhubo"].arrayObject {
+                if let datas = json["data"]["lists"].arrayObject {
                     completionHandler(datas.compactMap({ Video.deserialize(from: $0 as? Dictionary) }))
                 }
             }
