@@ -39,6 +39,7 @@
 		9D5567F1218AA134008CD7E4 /* AnchorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5567EF218AA134008CD7E4 /* AnchorTableViewCell.swift */; };
 		9D5567F2218AA134008CD7E4 /* AnchorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D5567F0218AA134008CD7E4 /* AnchorTableViewCell.xib */; };
 		9D5567F4218AB3CF008CD7E4 /* MyChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */; };
+		9D55E30321FC357E005DF662 /* kyj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E30221FC357E005DF662 /* kyj.swift */; };
 		9D5E7B3721BA17F400BF2314 /* ImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E7B3621BA17F400BF2314 /* ImgVC.swift */; };
 		9DC2B7D7219119F9000EEFDF /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7D6219119F9000EEFDF /* libstdc++.6.0.9.tbd */; };
 		9DC2B7D921911A2C000EEFDF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7D821911A2C000EEFDF /* libc++.tbd */; };
@@ -105,6 +106,7 @@
 		9D5567EF218AA134008CD7E4 /* AnchorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorTableViewCell.swift; sourceTree = "<group>"; };
 		9D5567F0218AA134008CD7E4 /* AnchorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnchorTableViewCell.xib; sourceTree = "<group>"; };
 		9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelsViewController.swift; sourceTree = "<group>"; };
+		9D55E30221FC357E005DF662 /* kyj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kyj.swift; sourceTree = "<group>"; };
 		9D5E7B3621BA17F400BF2314 /* ImgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgVC.swift; sourceTree = "<group>"; };
 		9DC2B7D6219119F9000EEFDF /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9DC2B7D821911A2C000EEFDF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				9D5567E7218A985C008CD7E4 /* MyChannel.swift */,
+				9D55E30221FC357E005DF662 /* kyj.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				9D5567EE218AA10D008CD7E4 /* AnchorViewController.swift in Sources */,
 				9D5567E0218A94B4008CD7E4 /* UICollectionView+Extension.swift in Sources */,
 				9D5567E3218A94B4008CD7E4 /* NetworkTool.swift in Sources */,
+				9D55E30321FC357E005DF662 /* kyj.swift in Sources */,
 				9D5567E1218A94B4008CD7E4 /* UITableView+Extension.swift in Sources */,
 				9D55679F218A8A74008CD7E4 /* AppDelegate.swift in Sources */,
 				9D5567CE218A8F8A008CD7E4 /* channelCell.swift in Sources */,
@@ -710,7 +714,7 @@
 					"-framework",
 					"\"Player\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.fulizhan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.FuliZhan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -752,7 +756,7 @@
 					"-framework",
 					"\"Player\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.fulizhan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.FuliZhan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
