@@ -33,6 +33,7 @@ class MyChannelsViewController: UIViewController {
 
         loadDatas()
         loadRefreshItem()
+        loadLeftItem()
        
    
     }
@@ -55,6 +56,19 @@ extension MyChannelsViewController{
     fileprivate func loadRefreshItem() {
         let rightItem = UIBarButtonItem.init(title: "刷新", style: .plain, target: self, action: #selector(loadDatas))
         self.navigationItem.rightBarButtonItem = rightItem
+    }
+    
+    fileprivate func loadLeftItem() {
+        let rightItem = UIBarButtonItem.init(title: "🔞", style: .plain, target: self, action: #selector(thumblrContent))
+        self.navigationItem.leftBarButtonItem = rightItem
+    }
+    
+    /// 少儿不宜
+    @objc func thumblrContent() {
+        let thumblrVC = KYJPlayViewController()
+        self.navigationController?.pushViewController(thumblrVC, animated: true)
+        
+        
     }
 
 }

@@ -13,10 +13,13 @@ import SwiftyJSON
 import CoreFoundation
 protocol NetworkToolProtocol {
 
-    //平台数据
+    ///平台数据
     static func loadMyChannels1_6(completionHandler: @escaping (_ videos: [MyChannel]) -> ())
-    //主播列表数据
+    ///主播列表数据
     static func loadMyAnchors(param:Parameters,completionHandler:@escaping (_ videos:[Video]) -> ())
+    
+    ///kyj videos
+    static func loadKYJVideos(page:NSInteger ,completionHandler: @escaping (_ videos: [InfoItem]) -> ())
     
     
 }
@@ -25,11 +28,12 @@ extension NetworkToolProtocol{
 
     static func loadMyChannels1_6(completionHandler: @escaping (_ videos: [MyChannel]) -> ()) {
         
-        let url = "http://www.kandx.vip/mobile/live/index"
+//        let url = "http://www.kandx.vip/mobile/live/index"
 
+        let url = "http://p.59card.com/mobile/live/index"
         let header =  [
             "User-Agent":"okhttp/3.8.1",
-            "token": "e7cd5a4726e5748c3af4f66c2b06a245",
+            "token": "95c23bbbf17297c3b6e25f5edfa6ad77",
             "Content-Type": "application/json; charset=utf-8"
         ]
         Alamofire.request(url,method:.post, headers: header).responseJSON { (response) in
@@ -45,10 +49,11 @@ extension NetworkToolProtocol{
     }
     
     static func loadMyAnchors(param:Parameters,completionHandler:@escaping (_ videos:[Video]) -> ()){
-        let url = "http://www.kandx.vip/mobile/live/anchors"
+//        let url = "http://www.kandx.vip/mobile/live/anchors"
+        let url = "http://p.59card.com/mobile/live/anchors"
         let header =  [
             "User-Agent":"okhttp/3.8.1",
-            "token": "e7cd5a4726e5748c3af4f66c2b06a245",
+            "token": "95c23bbbf17297c3b6e25f5edfa6ad77",
             "Content-Type": "application/json; charset=utf-8"
         ]
         Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
@@ -58,6 +63,27 @@ extension NetworkToolProtocol{
                 let json = JSON(value)
                 if let datas = json["data"]["lists"].arrayObject {
                     completionHandler(datas.compactMap({ Video.deserialize(from: $0 as? Dictionary) }))
+                }
+            }
+        }
+    }
+    
+        ///kyj videos
+    static func loadKYJVideos(page:NSInteger ,completionHandler: @escaping (_ videos: [InfoItem]) -> ()) {
+        
+        let url = "http://app.kyj344.com:8880/api/public/?service=Video.getRecommendVideos&uid=-9999&type=0&isstart=1&p=" + "\(page)"
+        
+        let header =  [
+            "Content-Type": "application/x-www-form-urlencoded",
+            "User-Agent": "iphoneLive/1.1 (iPhone; iOS 12.0; Scale/2.00)"
+        ]
+        Alamofire.request(url,method:.post, headers: header).responseJSON { (response) in
+            // 网络错误的提示信息
+            guard response.result.isSuccess else { return }
+            if let value = response.result.value {
+                let json = JSON(value)
+                if let datas = json["data"]["info"].arrayObject {
+                    completionHandler(datas.compactMap({InfoItem.deserialize(from: $0 as? Dictionary) }))
                 }
             }
         }

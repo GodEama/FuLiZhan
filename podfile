@@ -4,8 +4,10 @@ target 'FuliZhan' do
 
   pod 'Alamofire'
   pod 'HandyJSON'
-  pod 'Kingfisher'
+#  pod 'Kingfisher'
   pod 'SwiftyJSON'
   pod 'Player'
   pod 'SVProgressHUD'
+  pod 'SnapKit','~> 4.2.0'
+  pod 'BMPlayer', :git => 'https://github.com/ceeyang/BMPlayer.git'
 end

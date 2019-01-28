@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D270E1721FEABE000EDD84B /* SmallVideoPlayerCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D270E1621FEABE000EDD84B /* SmallVideoPlayerCustomView.swift */; };
 		9D3FFF8521FC187700A9D600 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3FFF8421FC187700A9D600 /* libstdc++.6.0.9.tbd */; };
 		9D4504E2219036540014E859 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4504E1219036540014E859 /* PlayViewController.swift */; };
 		9D4504E7219042720014E859 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4504E6219042720014E859 /* MediaPlayer.framework */; };
@@ -40,7 +41,7 @@
 		9D5567F2218AA134008CD7E4 /* AnchorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D5567F0218AA134008CD7E4 /* AnchorTableViewCell.xib */; };
 		9D5567F4218AB3CF008CD7E4 /* MyChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */; };
 		9D55E30321FC357E005DF662 /* kyj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E30221FC357E005DF662 /* kyj.swift */; };
-		9D5E7B3721BA17F400BF2314 /* ImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E7B3621BA17F400BF2314 /* ImgVC.swift */; };
+		9D55E30621FC3F4D005DF662 /* KYJPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E30421FC3F4D005DF662 /* KYJPlayViewController.swift */; };
 		9DC2B7D7219119F9000EEFDF /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7D6219119F9000EEFDF /* libstdc++.6.0.9.tbd */; };
 		9DC2B7D921911A2C000EEFDF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7D821911A2C000EEFDF /* libc++.tbd */; };
 		9DC2B7DB21911ABB000EEFDF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7DA21911ABB000EEFDF /* libz.tbd */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		083CB6B5D3B92846C52E77BC /* Pods_FuliZhan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FuliZhan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D270E1621FEABE000EDD84B /* SmallVideoPlayerCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVideoPlayerCustomView.swift; sourceTree = "<group>"; };
 		9D3FFF8421FC187700A9D600 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
 		9D4504E1219036540014E859 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		9D4504E6219042720014E859 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -107,7 +109,7 @@
 		9D5567F0218AA134008CD7E4 /* AnchorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnchorTableViewCell.xib; sourceTree = "<group>"; };
 		9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelsViewController.swift; sourceTree = "<group>"; };
 		9D55E30221FC357E005DF662 /* kyj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kyj.swift; sourceTree = "<group>"; };
-		9D5E7B3621BA17F400BF2314 /* ImgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgVC.swift; sourceTree = "<group>"; };
+		9D55E30421FC3F4D005DF662 /* KYJPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYJPlayViewController.swift; sourceTree = "<group>"; };
 		9DC2B7D6219119F9000EEFDF /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9DC2B7D821911A2C000EEFDF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		9DC2B7DA21911ABB000EEFDF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -276,6 +278,7 @@
 				9D5567CD218A8F8A008CD7E4 /* channelCell.xib */,
 				9D5567EF218AA134008CD7E4 /* AnchorTableViewCell.swift */,
 				9D5567F0218AA134008CD7E4 /* AnchorTableViewCell.xib */,
+				9D270E1621FEABE000EDD84B /* SmallVideoPlayerCustomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,7 +289,7 @@
 				9D5567F3218AB3CF008CD7E4 /* MyChannelsViewController.swift */,
 				9D5567ED218AA10D008CD7E4 /* AnchorViewController.swift */,
 				9D4504E1219036540014E859 /* PlayViewController.swift */,
-				9D5E7B3621BA17F400BF2314 /* ImgVC.swift */,
+				9D55E30421FC3F4D005DF662 /* KYJPlayViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -467,19 +470,23 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FuliZhan/Pods-FuliZhan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BMPlayer/BMPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +503,7 @@
 			files = (
 				9D5567EE218AA10D008CD7E4 /* AnchorViewController.swift in Sources */,
 				9D5567E0218A94B4008CD7E4 /* UICollectionView+Extension.swift in Sources */,
+				9D270E1721FEABE000EDD84B /* SmallVideoPlayerCustomView.swift in Sources */,
 				9D5567E3218A94B4008CD7E4 /* NetworkTool.swift in Sources */,
 				9D55E30321FC357E005DF662 /* kyj.swift in Sources */,
 				9D5567E1218A94B4008CD7E4 /* UITableView+Extension.swift in Sources */,
@@ -503,7 +511,7 @@
 				9D5567CE218A8F8A008CD7E4 /* channelCell.swift in Sources */,
 				9D5567DF218A94B4008CD7E4 /* UIView+Extension.swift in Sources */,
 				9D5567E8218A985C008CD7E4 /* MyChannel.swift in Sources */,
-				9D5E7B3721BA17F400BF2314 /* ImgVC.swift in Sources */,
+				9D55E30621FC3F4D005DF662 /* KYJPlayViewController.swift in Sources */,
 				9D5567DE218A94B4008CD7E4 /* UIColor+Extension.swift in Sources */,
 				9D5567F1218AA134008CD7E4 /* AnchorTableViewCell.swift in Sources */,
 				9D5567E6218A94F0008CD7E4 /* Const.swift in Sources */,
@@ -691,7 +699,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FuliZhan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -708,11 +716,10 @@
 					"-framework",
 					"\"HandyJSON\"",
 					"-framework",
-					"\"Kingfisher\"",
-					"-framework",
 					"\"SwiftyJSON\"",
 					"-framework",
 					"\"Player\"",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.FuliZhan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -733,7 +740,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FuliZhan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,11 +757,10 @@
 					"-framework",
 					"\"HandyJSON\"",
 					"-framework",
-					"\"Kingfisher\"",
-					"-framework",
 					"\"SwiftyJSON\"",
 					"-framework",
 					"\"Player\"",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jingying.FuliZhan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
