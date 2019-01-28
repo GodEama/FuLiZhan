@@ -9,7 +9,7 @@
 import UIKit
 import IJKMediaFramework
 import SVProgressHUD
-//import Kingfisher
+import Kingfisher
 import BMPlayer
 
 class KYJPlayViewController: UIViewController {
@@ -43,6 +43,7 @@ class KYJPlayViewController: UIViewController {
         playView.frame = self.view.bounds
         playView.backgroundColor = .clear
         view.addSubview(playView)
+        player.backgroundColor = .clear
         playView.addSubview(self.player)
         self.player.delegate = self as BMPlayerDelegate;
         
@@ -75,7 +76,12 @@ class KYJPlayViewController: UIViewController {
         playIndex = index
         let vi : InfoItem = self.videos[index] as! InfoItem
         playUrl = vi.href
-//        self.imageView.kf.setImage(with: URL(string: (vi.thumb)))
+        self.imageView.kf.setImage(with: URL(string: (vi.thumb)))
+        let titleLab = UILabel()
+        titleLab.text = vi.title
+        titleLab.textColor = .white
+        
+        
         DispatchQueue.main.async {
             
             if self.player.isPlaying { self.player.pause() }
@@ -83,6 +89,12 @@ class KYJPlayViewController: UIViewController {
             for subview in self.playView.subviews { subview.removeFromSuperview() }
             self.playView.addSubview(self.player)
             self.player.snp.makeConstraints({ $0.edges.equalTo(self.playView) })
+            self.playView.addSubview(titleLab)
+            titleLab.snp.makeConstraints {
+                $0.bottom.equalTo(self.playView).offset(-40)
+                $0.left.equalTo(self.playView).offset(18)
+                $0.right.lessThanOrEqualTo(self.playView).offset(-18)
+            }
             let asset = BMPlayerResource(url: URL(string: self.playUrl)!)
             self.player.setVideo(resource: asset)
             self.player.play()
@@ -216,6 +228,10 @@ extension KYJPlayViewController{
                 self.playWithVideo(index: self.playIndex + 1)
             }
         }
+    }
+    
+    func downLoadVideo() {
+        
     }
 }
 

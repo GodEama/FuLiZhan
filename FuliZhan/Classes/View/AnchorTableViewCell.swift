@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class AnchorTableViewCell: UITableViewCell,RegisterCellFromNib {
     @IBOutlet weak var imgView: UIImageView!
     
@@ -18,7 +18,7 @@ class AnchorTableViewCell: UITableViewCell,RegisterCellFromNib {
         didSet{
             nameLabel.text = anchor.title
 //            addressLabel.text = anchor.address
-//            imgView.kf.setImage(with: URL(string: (anchor.img)))
+            imgView.kf.setImage(with: URL(string: (anchor.img)))
         }
     }
     

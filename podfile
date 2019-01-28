@@ -4,7 +4,7 @@ target 'FuliZhan' do
 
   pod 'Alamofire'
   pod 'HandyJSON'
-#  pod 'Kingfisher'
+  pod 'Kingfisher'
   pod 'SwiftyJSON'
   pod 'Player'
   pod 'SVProgressHUD'

@@ -9,7 +9,7 @@
 import UIKit
 import IJKMediaFramework
 import SVProgressHUD
-//import Kingfisher
+import Kingfisher
 
 class PlayViewController: UIViewController{
     
@@ -23,7 +23,7 @@ class PlayViewController: UIViewController{
         let imageView = UIImageView(frame: self.view.bounds)
 //        imageView.contentMode = .scaleAspectFit
         imageView.center = self.view.center;
-//        imageView.kf.setImage(with: URL(string: (video.img)))
+        imageView.kf.setImage(with: URL(string: (video.img)))
         self.view.addSubview(imageView)
         
         let effect = UIBlurEffect(style: .dark)

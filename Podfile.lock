@@ -8,6 +8,7 @@ PODS:
     - NVActivityIndicatorView (~> 4.4.0)
     - SnapKit (~> 4.2.0)
   - HandyJSON (4.2.1)
+  - Kingfisher (4.10.1)
   - NVActivityIndicatorView (4.4.1):
     - NVActivityIndicatorView/Presenter (= 4.4.1)
   - NVActivityIndicatorView/Presenter (4.4.1)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Alamofire
   - BMPlayer (from `https://github.com/ceeyang/BMPlayer.git`)
   - HandyJSON
+  - Kingfisher
   - Player
   - SnapKit (~> 4.2.0)
   - SVProgressHUD
@@ -29,6 +31,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - HandyJSON
+    - Kingfisher
     - NVActivityIndicatorView
     - Player
     - SnapKit
@@ -48,12 +51,13 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   BMPlayer: 1b1939fa311d7c04fed8940208cfaf3ba898fb6a
   HandyJSON: d0c5fc80204f29056d59d3e5c4587fa0b16b60a8
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   NVActivityIndicatorView: f0a6b0ed2973d9544da268f4eb76696f0a9577b0
   Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 68fd42f6191f595386add161cbfc2471ff69b3b4
+PODFILE CHECKSUM: ad3194aa1f6c218b5b56a1e9c2527ee35f2795f1
 
 COCOAPODS: 1.5.3

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Kingfisher
+import Kingfisher
 
 class channelCell: UICollectionViewCell,RegisterCellFromNib {
 
@@ -17,7 +17,7 @@ class channelCell: UICollectionViewCell,RegisterCellFromNib {
     var channel = MyChannel(){
         didSet{
             nameLabel.text = channel.title + "(" + channel.number + ")"
-//            imgView.kf.setImage(with: URL(string: (channel.img)))
+            imgView.kf.setImage(with: URL(string: (channel.img)))
         }
     }
     override func awakeFromNib() {
