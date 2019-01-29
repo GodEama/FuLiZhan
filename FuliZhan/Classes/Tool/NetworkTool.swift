@@ -11,6 +11,9 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import CoreFoundation
+import SVProgressHUD
+import Photos
+
 protocol NetworkToolProtocol {
 
     ///平台数据
@@ -20,6 +23,11 @@ protocol NetworkToolProtocol {
     
     ///kyj videos
     static func loadKYJVideos(page:NSInteger ,completionHandler: @escaping (_ videos: [InfoItem]) -> ())
+    
+    /// 保存视频
+    ///
+    /// - Parameter url: 视频地址
+    static func downloadVideo(url:String);
     
     
 }
@@ -87,6 +95,33 @@ extension NetworkToolProtocol{
                 }
             }
         }
+    }
+    
+    /// 保存视频
+    ///
+    /// - Parameter url: 视频地址
+    static func downloadVideo(url:String) {
+       
+        Alamofire.download(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil) { (url, response) -> (destinationURL: URL, options: DownloadRequest.DownloadOptions) in
+            return (URL(fileURLWithPath: String(describing : NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]+"/123.mp4")), [.createIntermediateDirectories, .removePreviousFile])
+            }.downloadProgress { progress in
+                print(String.init(format: "%.2f", progress))
+            }.responseJSON { res in
+                let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]+"/123.mp4"
+            
+                
+                PHPhotoLibrary.shared().performChanges({
+                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL:URL(fileURLWithPath: filePath))
+                }) { (boo, error) in
+                    
+                    if error == nil
+                    {
+                        SVProgressHUD.showSuccess(withStatus: "下载成功")
+                    }
+                }
+        }
+
+       
     }
 //
 //    static func loadMyChannels(url:String,completionHandler:@escaping (_ videos:[Video]) -> ()) {

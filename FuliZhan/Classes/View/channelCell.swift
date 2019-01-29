@@ -24,7 +24,7 @@ class channelCell: UICollectionViewCell,RegisterCellFromNib {
         super.awakeFromNib()
         // Initialization code
         imgView.layer.masksToBounds = true
-        imgView.layer.cornerRadius = 40;
+        imgView.layer.cornerRadius = 25;
     }
 
 }

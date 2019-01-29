@@ -67,7 +67,9 @@ class KYJPlayViewController: UIViewController {
         
         view1.addGestureRecognizer(swipUp)
         
-       loadDatas()
+        loadDatas()
+    
+        loadDownloadItem()
         
     }
     
@@ -230,8 +232,16 @@ extension KYJPlayViewController{
         }
     }
     
-    func downLoadVideo() {
-        
+    @objc func downLoadVideo() {
+        if self.playUrl.hasPrefix("http") {
+             NetworkTool.downloadVideo(url: self.playUrl)
+        }
+       
+    }
+    
+    fileprivate func loadDownloadItem() {
+        let rightItem = UIBarButtonItem.init(title: "download video", style: .plain, target: self, action: #selector(downLoadVideo))
+        self.navigationItem.rightBarButtonItem = rightItem
     }
 }
 
