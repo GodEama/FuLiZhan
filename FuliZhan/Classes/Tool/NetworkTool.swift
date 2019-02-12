@@ -41,7 +41,7 @@ extension NetworkToolProtocol{
         let url = "http://p.59card.com/mobile/live/index"
         let header =  [
             "User-Agent":"okhttp/3.8.1",
-            "token": "95c23bbbf17297c3b6e25f5edfa6ad77",
+            "token": "550340d2b2261fc39e5f86e68d5fdb44",
             "Content-Type": "application/json; charset=utf-8"
         ]
         Alamofire.request(url,method:.post, headers: header).responseJSON { (response) in
@@ -61,7 +61,7 @@ extension NetworkToolProtocol{
         let url = "http://p.59card.com/mobile/live/anchors"
         let header =  [
             "User-Agent":"okhttp/3.8.1",
-            "token": "95c23bbbf17297c3b6e25f5edfa6ad77",
+            "token": "550340d2b2261fc39e5f86e68d5fdb44",
             "Content-Type": "application/json; charset=utf-8"
         ]
         Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
