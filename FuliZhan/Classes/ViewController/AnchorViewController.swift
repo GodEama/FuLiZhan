@@ -66,7 +66,7 @@ class AnchorViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let playerVC = PlayViewController()
         let video = self.myAnchors[indexPath.row]
-        playerVC.playUrl = video.play_url
+        playerVC.playUrl = video.address
         playerVC.title = video.title
         playerVC.video = video
         self.navigationController?.pushViewController(playerVC, animated: true)

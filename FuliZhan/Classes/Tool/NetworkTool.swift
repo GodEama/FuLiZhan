@@ -38,18 +38,18 @@ extension NetworkToolProtocol{
         
 //        let url = "http://www.kandx.vip/mobile/live/index"
 
-        let url = "http://p.59card.com/mobile/live/index"
+        let url = "http://qtzbb.com/mf/json.txt"
         let header =  [
-            "User-Agent":"okhttp/3.8.1",
-            "token": "550340d2b2261fc39e5f86e68d5fdb44",
-            "Content-Type": "application/json; charset=utf-8"
+            "User-Agent":"Mozilla/5.0 (Linux; Android 4.4.2; OPPO R11 Build/NMF26X) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36",
+            /*"token": "550340d2b2261fc39e5f86e68d5fdb44",
+            "Content-Type": "application/json; charset=utf-8"*/
         ]
-        Alamofire.request(url,method:.post, headers: header).responseJSON { (response) in
+        Alamofire.request(url,method:.get, headers: header).responseJSON { (response) in
             // 网络错误的提示信息
             guard response.result.isSuccess else { return }
             if let value = response.result.value {
                 let json = JSON(value)
-                if let datas = json["data"]["lists"].arrayObject {
+                if let datas = json["pingtai"].arrayObject {
                     completionHandler(datas.compactMap({ MyChannel.deserialize(from: $0 as? Dictionary) }))
                 }
             }
@@ -58,18 +58,24 @@ extension NetworkToolProtocol{
     
     static func loadMyAnchors(param:Parameters,completionHandler:@escaping (_ videos:[Video]) -> ()){
 //        let url = "http://www.kandx.vip/mobile/live/anchors"
-        let url = "http://p.59card.com/mobile/live/anchors"
+//        let url = "http://p.59card.com/mobile/live/anchors"
+        var addr = ""
+        
+        if param.values.count > 0 {
+            addr = param.values.first as! String
+        }
+        let url = "http://vip.alijuhe.vip/api/2019/" + addr;
         let header =  [
-            "User-Agent":"okhttp/3.8.1",
-            "token": "550340d2b2261fc39e5f86e68d5fdb44",
-            "Content-Type": "application/json; charset=utf-8"
+            "User-Agent":"Mozilla/5.0 (Linux; Android 4.4.2; OPPO R11 Build/NMF26X) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36",
+            /*"token": "550340d2b2261fc39e5f86e68d5fdb44",
+            "Content-Type": "application/json; charset=utf-8"*/
         ]
-        Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             // 网络错误的提示信息
             guard response.result.isSuccess else { return }
             if let value = response.result.value {
                 let json = JSON(value)
-                if let datas = json["data"]["lists"].arrayObject {
+                if let datas = json["zhubo"].arrayObject {
                     completionHandler(datas.compactMap({ Video.deserialize(from: $0 as? Dictionary) }))
                 }
             }

@@ -90,7 +90,7 @@ extension MyChannelsViewController:UICollectionViewDelegate,UICollectionViewData
         let vc = AnchorViewController()
         let video = myChannels[indexPath.row]
         vc.title = video.title;
-        vc.address = video.name
+        vc.address = video.address
         self.navigationController?.pushViewController(vc, animated: true)
 
         
