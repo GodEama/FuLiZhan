@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,6 @@
 		9D45D4172214F815009FCA3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D45D4162214F815009FCA3C /* UIKit.framework */; };
 		9D45D4182214F820009FCA3C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4504FA219043220014E859 /* VideoToolbox.framework */; };
 		9D45D4192214F982009FCA3C /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4504FF2190458B0014E859 /* libstdc++.6.0.9.tbd */; };
-		9D45D41C2214FABC009FCA3C /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D45D41B2214FABC009FCA3C /* IJKMediaFramework.framework */; };
 		9D55679F218A8A74008CD7E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55679E218A8A74008CD7E4 /* AppDelegate.swift */; };
 		9D5567A4218A8A74008CD7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5567A2218A8A74008CD7E4 /* Main.storyboard */; };
 		9D5567A6218A8A77008CD7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D5567A5218A8A77008CD7E4 /* Assets.xcassets */; };
@@ -46,6 +45,7 @@
 		9D55E30621FC3F4D005DF662 /* KYJPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D55E30421FC3F4D005DF662 /* KYJPlayViewController.swift */; };
 		9DC2B7D921911A2C000EEFDF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7D821911A2C000EEFDF /* libc++.tbd */; };
 		9DC2B7DB21911ABB000EEFDF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC2B7DA21911ABB000EEFDF /* libz.tbd */; };
+		F6E37C0F22AFAC1D0002546A /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E37C0E22AFAC1D0002546A /* IJKMediaFramework.framework */; };
 		FC0D0C26E5C939EC4ECE4ECA /* Pods_FuliZhan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083CB6B5D3B92846C52E77BC /* Pods_FuliZhan.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +83,6 @@
 		9D4504FA219043220014E859 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		9D4504FF2190458B0014E859 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
 		9D45D4162214F815009FCA3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9D45D41B2214FABC009FCA3C /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		9D55679B218A8A74008CD7E4 /* FuliZhan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuliZhan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D55679E218A8A74008CD7E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D5567A3218A8A74008CD7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		9DC2B7DC219132CF000EEFDF /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8CDFEF7BBD79A28A6686A5 /* Pods-FuliZhan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuliZhan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuliZhan/Pods-FuliZhan.debug.xcconfig"; sourceTree = "<group>"; };
 		DE9D48AD5306A91D32EDA77D /* Pods-FuliZhan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuliZhan.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuliZhan/Pods-FuliZhan.release.xcconfig"; sourceTree = "<group>"; };
+		F6E37C0E22AFAC1D0002546A /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 				9D45D4172214F815009FCA3C /* UIKit.framework in Frameworks */,
 				9D45D4152214F80A009FCA3C /* QuartzCore.framework in Frameworks */,
 				9D45D4142214F7FE009FCA3C /* OpenGLES.framework in Frameworks */,
-				9D45D41C2214FABC009FCA3C /* IJKMediaFramework.framework in Frameworks */,
+				F6E37C0F22AFAC1D0002546A /* IJKMediaFramework.framework in Frameworks */,
 				9D45D4132214F7F3009FCA3C /* MobileCoreServices.framework in Frameworks */,
 				9D45D4122214F7E9009FCA3C /* MediaPlayer.framework in Frameworks */,
 				9D45D4112214F7DC009FCA3C /* CoreVideo.framework in Frameworks */,
@@ -199,7 +199,7 @@
 		9D45D41A2214FAA1009FCA3C /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				9D45D41B2214FABC009FCA3C /* IJKMediaFramework.framework */,
+				F6E37C0E22AFAC1D0002546A /* IJKMediaFramework.framework */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -477,33 +477,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FuliZhan/Pods-FuliZhan-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BMPlayer/BMPlayer.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FuliZhan/Pods-FuliZhan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BMPlayer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FuliZhan/Pods-FuliZhan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FuliZhan/Pods-FuliZhan-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FuliZhan/Pods-FuliZhan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

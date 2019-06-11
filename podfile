@@ -3,7 +3,7 @@ target 'FuliZhan' do
   use_frameworks!
 
   pod 'Alamofire'
-  pod 'HandyJSON'
+  pod 'HandyJSON','5.0.0'
   pod 'Kingfisher'
   pod 'SwiftyJSON'
   pod 'Player'
