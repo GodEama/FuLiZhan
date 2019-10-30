@@ -10,18 +10,23 @@ import UIKit
 import IJKMediaFramework
 import SVProgressHUD
 import Kingfisher
+import Combine
 
 class PlayViewController: UIViewController{
     
     var playUrl : String  = ""
     var video : Video = Video()
     var isHidden : Bool = true
+    var currentIndex = 0
+    var datas = [Video]()
+    var imageView = UIImageView()
+    
     
     lazy var player: IJKFFMoviePlayerController = IJKFFMoviePlayerController(contentURLString: playUrl, with: IJKFFOptions.byDefault())
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView = UIImageView(frame: self.view.bounds)
-//        imageView.contentMode = .scaleAspectFit
+        imageView.frame = self.view.bounds
+            //        imageView.contentMode = .scaleAspectFit
         imageView.center = self.view.center;
         imageView.kf.setImage(with: URL(string: (video.img)))
         self.view.addSubview(imageView)
@@ -42,11 +47,20 @@ class PlayViewController: UIViewController{
         view1.frame = self.view.bounds
         self.view.addSubview(view1)
         let gesture = UITapGestureRecognizer(target: self, action: #selector(showNav))
+        self.view.addGestureRecognizer(gesture)
+        let upGes = UISwipeGestureRecognizer(target: self, action: #selector(upSwipGesFunc))
+        //设置滑动方向
+    //如果UISwipeGestureRecognizer在不指定方向的时候，默认向右滑动才会触发事件。如果要指定方向，需要设置direction属性
+        upGes.direction = .up
+        self.view.addGestureRecognizer(upGes)
+        
+        let downGes = UISwipeGestureRecognizer(target: self, action: #selector(downSwipGesFunc))
+        downGes.direction = .down
+        self.view.addGestureRecognizer(downGes)
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadStateDidChange), name: NSNotification.Name.IJKMPMoviePlayerLoadStateDidChange, object: player)
         NotificationCenter.default.addObserver(self, selector: #selector(moviePlayBackDidFinish), name: NSNotification.Name.IJKMPMoviePlayerPlaybackDidFinish, object: player)
         
-        view1.addGestureRecognizer(gesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +93,37 @@ class PlayViewController: UIViewController{
                 self.isHidden = true
         })
     }
+    @objc func upSwipGesFunc() {
+        self.switchVideo(direction: 1)
+    }
+    @objc func downSwipGesFunc() {
+        self.switchVideo(direction: -1)
+    }
+    
+    
+    func switchVideo(direction : Int) {
+        if currentIndex >= datas.count && direction > 0{
+            return
+        }
+        if currentIndex <= 0 && direction < 0{
+            return
+        }
+        
+        self.currentIndex += direction
+        let video = datas[currentIndex];
+        
+        self.title = video.title
+        imageView.kf.setImage(with: URL(string: (video.img)))
+        
+        playUrl = video.address
+        player.view.removeFromSuperview()
+        player.shutdown()
+        
+        self.player = IJKFFMoviePlayerController(contentURLString: playUrl, with: IJKFFOptions.byDefault())
+        self.view.addSubview(player.view)
+        self.player.prepareToPlay()
+    }
+
     
     @objc func loadStateDidChange(_ notification : NSNotification){
         switch player.loadState {
