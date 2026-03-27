@@ -32,12 +32,9 @@ class KYJPlayViewController: UIViewController {
         imageView.frame = self.view.bounds
         imageView.center = self.view.center;
         self.view.addSubview(imageView)
-        
-        let effect = UIBlurEffect(style: .dark)
-        let effectView = UIVisualEffectView(effect: effect)
-        effectView.frame = imageView.bounds;
-        imageView.addSubview(effectView)
-        
+
+        imageView.addBlurBackground()
+
         self.view.backgroundColor = .white
         
         playView.frame = self.view.bounds
@@ -45,7 +42,7 @@ class KYJPlayViewController: UIViewController {
         view.addSubview(playView)
         player.backgroundColor = .clear
         playView.addSubview(self.player)
-        self.player.delegate = self as BMPlayerDelegate;
+        self.player.delegate = self
         
         view1.backgroundColor = .clear
         view1.frame = self.view.bounds
@@ -76,7 +73,7 @@ class KYJPlayViewController: UIViewController {
     func playWithVideo(index:NSInteger) {
 //        NotificationCenter.default.removeObserver(self)
         playIndex = index
-        let vi : InfoItem = self.videos[index] as! InfoItem
+        guard let vi = self.videos[index] as? InfoItem else { return }
         playUrl = vi.href
         self.imageView.kf.setImage(with: URL(string: (vi.thumb)))
         let titleLab = UILabel()
@@ -97,7 +94,8 @@ class KYJPlayViewController: UIViewController {
                 $0.left.equalTo(self.playView).offset(18)
                 $0.right.lessThanOrEqualTo(self.playView).offset(-18)
             }
-            let asset = BMPlayerResource(url: URL(string: self.playUrl)!)
+            guard let url = URL(string: self.playUrl) else { return }
+            let asset = BMPlayerResource(url: url)
             self.player.setVideo(resource: asset)
             self.player.play()
         }
@@ -155,7 +153,8 @@ class KYJPlayViewController: UIViewController {
     
     deinit {
         player.pause()
-//        NotificationCenter.default.removeObserver(self)
+        player.delegate = nil
+        NotificationCenter.default.removeObserver(self)
     }
   
 

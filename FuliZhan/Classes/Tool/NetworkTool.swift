@@ -62,9 +62,9 @@ extension NetworkToolProtocol{
         //        let url = "http://www.kandx.vip/mobile/live/anchors"
         //        let url = "http://p.59card.com/mobile/live/anchors"
         var addr = ""
-        
-        if param.values.count > 0 {
-            addr = param.values.first as! String
+
+        if let address = param["name"] as? String {
+            addr = address
         }
         let url = "http://api.hclyz.com:81/mf/" + addr;
         let header =  [

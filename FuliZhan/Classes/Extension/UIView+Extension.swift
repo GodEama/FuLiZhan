@@ -12,5 +12,11 @@ protocol RegisterCellFromNib {}
 extension UIView{
     static var identifier:String {return "\(self)"}
     static var nib:UINib?{return UINib(nibName: "\(self)", bundle: nil)}
-    
+
+    func addBlurBackground(style: UIBlurEffect.Style = .dark) {
+        let effect = UIBlurEffect(style: style)
+        let effectView = UIVisualEffectView(effect: effect)
+        effectView.frame = bounds
+        addSubview(effectView)
+    }
 }

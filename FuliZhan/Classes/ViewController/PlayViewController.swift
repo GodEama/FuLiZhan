@@ -10,8 +10,6 @@ import UIKit
 import IJKMediaFramework
 import SVProgressHUD
 import Kingfisher
-import Combine
-
 class PlayViewController: UIViewController{
     
     var playUrl : String  = ""
@@ -28,16 +26,13 @@ class PlayViewController: UIViewController{
         imageView.frame = self.view.bounds
             //        imageView.contentMode = .scaleAspectFit
         imageView.center = self.view.center;
-        imageView.kf.setImage(with: URL(string: (video.img)))
+        if let url = URL(string: video.img) {
+            imageView.kf.setImage(with: url)
+        }
         self.view.addSubview(imageView)
-        
-        let effect = UIBlurEffect(style: .dark)
-        let effectView = UIVisualEffectView(effect: effect)
-        effectView.frame = imageView.bounds;
-        imageView.addSubview(effectView)
-        
-        
-        
+
+        imageView.addBlurBackground()
+
         self.view.backgroundColor = .white
         player.scalingMode = .aspectFit
         player.setPauseInBackground(true)
@@ -58,8 +53,8 @@ class PlayViewController: UIViewController{
         downGes.direction = .down
         self.view.addGestureRecognizer(downGes)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loadStateDidChange), name: NSNotification.Name.IJKMPMoviePlayerLoadStateDidChange, object: player)
-        NotificationCenter.default.addObserver(self, selector: #selector(moviePlayBackDidFinish), name: NSNotification.Name.IJKMPMoviePlayerPlaybackDidFinish, object: player)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadStateDidChange), name: NSNotification.Name.IJKMPMoviePlayerLoadStateDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(moviePlayBackDidFinish), name: NSNotification.Name.IJKMPMoviePlayerPlaybackDidFinish, object: nil)
         
     }
     
@@ -102,7 +97,7 @@ class PlayViewController: UIViewController{
     
     
     func switchVideo(direction : Int) {
-        if currentIndex >= datas.count && direction > 0{
+        if currentIndex >= datas.count - 1 && direction > 0{
             return
         }
         if currentIndex <= 0 && direction < 0{
@@ -113,7 +108,9 @@ class PlayViewController: UIViewController{
         let video = datas[currentIndex];
         
         self.title = video.title
-        imageView.kf.setImage(with: URL(string: (video.img)))
+        if let url = URL(string: video.img) {
+            imageView.kf.setImage(with: url)
+        }
         
         playUrl = video.address
         player.view.removeFromSuperview()
